@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
-const Shedule = require("../models/shedulerData.model");
+const Schedule = require("../models/schedulerData.model");
 const checkClassLimit = require("../validation/checkClassLimit.js");
 const isClassGroupAvailable = require("../validation/isClassGroupAvailable");
 const isClassRoomAvailable = require("../validation/isClassRoomAvailable");
 const isProfAvailable = require("../validation/isProfAvailable");
 
-router.post("/shedule", async (req, res) => {
+router.post("/schedule", async (req, res) => {
   try {
     // checking the number of student in class is must be in given limit
-    const instructorData = await Shedule.find().lean().exec();
+    const instructorData = await Schedule.find().lean().exec();
     const { course, instructor, meetingTime, room } = req.body;
     let checkC = checkClassLimit(course);
     if (checkC != "true") {
@@ -53,9 +53,9 @@ router.post("/shedule", async (req, res) => {
 
 
     // if all condition are false then we can shedule 
-    const sheduleData = await Shedule.create(req.body);
+    const scheduleData = await Schedule.create(req.body);
 
-    return res.status(201).send({ sheduleData });
+    return res.status(201).send({ scheduleData });
   } catch (err) {
     return res.status(500).send(err);
   }

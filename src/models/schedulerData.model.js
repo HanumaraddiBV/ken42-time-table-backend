@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const shedulerDataSchema = new mongoose.Schema(
+const schedulerDataSchema = new mongoose.Schema(
   {
     dep: { type: String, required: true },
     course: {
@@ -29,5 +29,5 @@ const shedulerDataSchema = new mongoose.Schema(
   }
 );
 
-const Data = mongoose.model("data", shedulerDataSchema);
+const Data = mongoose.model("data", schedulerDataSchema);
 module.exports = Data;

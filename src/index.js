@@ -1,13 +1,13 @@
 const express = require("express");
 
 const app = express();
-const sheduleDataController = require("./controllers/shedulerData.controller")
+const scheduleDataController = require("./controllers/schedulerData.controller")
 app.use(express.json());
 
 
 
 
-app.use("/data", sheduleDataController);
+app.use("/data", scheduleDataController);
 
 
 module.exports = app;
