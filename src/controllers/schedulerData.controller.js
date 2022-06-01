@@ -65,7 +65,7 @@ router.post("/schedule", async (req, res) => {
 // fetching all data stored in database
 router.get("/timetable", async (req, res) => {
   try {
-    const Data = await Shedule.find().lean().exec();
+    const Data = await Schedule.find().lean().exec();
     return res.status(200).send(Data);
   } catch (e) {
     return res.status(500).send(err);
