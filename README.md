@@ -24,8 +24,9 @@ To add schedule, simply send a POST to /data/schedule/ with the required fields 
 http://localhost:4000/datas/schedule
 ```
 
-```
+
 # Heroku deployment link
+
 ```
 https://ken42-time-table.herokuapp.com/data/timetable
 ```
@@ -35,6 +36,4 @@ https://ken42-time-table.herokuapp.com/data/timetable
 ```
 GET http://localhost:4000/data/timetable
 POST http://localhost:4000/data/schedule
-
-
 ```
